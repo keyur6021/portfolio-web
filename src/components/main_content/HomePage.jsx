@@ -7,8 +7,9 @@ const HomePage = () => {
     <React.Fragment>
       <div>
         <Header />
+
       </div>
-       
+
     </React.Fragment>
   );
 };

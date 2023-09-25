@@ -1,6 +1,7 @@
-body{
- overflow-x: hidden;
+body {
+    overflow-x: hidden;
 }
+
 .container {
     z-index: 1;
     position: relative;
@@ -11,7 +12,7 @@ body{
 .bird {
     background-image: url('./assets/images/bird.svg');
     background-size: auto 100%;
-    width:540px;
+    width: 350px;
     height: 125px;
     will-change: background-position;
 
@@ -44,8 +45,8 @@ body{
 .bird-container {
     position: absolute;
     top: 12%;
-    left: -10%;
-    // left: -20%;
+    // left: -10%;
+    left: -20%;
     transform: scale(0) translateX(-10vw);
     will-change: transform;
 
@@ -87,7 +88,7 @@ body{
 
     0% {
         transform: scale(0.3) translateX(-10vw);
-        rotate: 15deg;
+        rotate: 45deg;
     }
 
     10% {
@@ -116,7 +117,7 @@ body{
 
     100% {
         transform: translateY(0vh) translateX(110vw) scale(1.6);
-        rotate: -20deg;
+        rotate: -80deg;
     }
 
 }
@@ -156,4 +157,35 @@ body{
         rotate: 45deg;
     }
 
+}
+
+
+// ! media- query for all screen queries
+
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+    @keyframes fly-right-one {
+
+        0% {
+            transform: scale(0.3) translateX(-10vw);
+            rotate: 45deg;
+        }
+
+        100% {
+            transform: translateY(0vh) translateX(110vw) scale(1.6);
+            rotate: -55deg;
+        }
+    }
+
+    .content {
+        left: 15%;
+    }
+
+    .parent-contact {
+        left: 38%;
+    }
+
+    .content1 h2 {
+        left: 32%;
+    }
 }

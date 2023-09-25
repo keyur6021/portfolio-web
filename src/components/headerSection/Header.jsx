@@ -63,8 +63,8 @@ const Header = () => {
           </div>
         </div>
         <div class="content1">
-          <h2> React-Developer</h2>
-          <h2>React-Developer</h2>
+          <h2> Frontend-Developer </h2>
+          <h2>Frontend-Developer</h2>
         </div>
         <div className="parent-contact">
           <button className="contact-btn"> Contact Us </button>

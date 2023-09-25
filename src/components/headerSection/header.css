@@ -46,14 +46,14 @@
 .content {
   position: absolute;
   top: 45%;
-  left: 30%;
+  left: 27%;
   text-align: center;
 }
 
 .parent-contact {
   position: absolute;
-  bottom: 22%;
-  left: 43%;
+  bottom: 20%;
+  left: 41.5%;
   text-align: center;
 }
 
@@ -145,7 +145,7 @@
 .profile-parent {
   position: absolute;
   top: 20%;
-  left: 48%;
+  left: 45%;
 }
 
 .profile {
@@ -165,7 +165,7 @@
   font-size: 2.8rem;
   position: absolute;
   top: 54%;
-  left: 42%;
+  left: 38%;
 }
 
 .content1 h2:nth-child(1) {
