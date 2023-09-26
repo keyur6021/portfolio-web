@@ -189,3 +189,102 @@ body {
         left: 32%;
     }
 }
+
+@media (min-width: 768px) and (max-width: 1439px) {
+    @keyframes fly-right-one {
+
+        0% {
+            transform: scale(0.3) translateX(-10vw);
+            rotate: 20deg;
+        }
+
+        100% {
+            transform: translateY(0vh) translateX(110vw) scale(1.6);
+            rotate: -56deg;
+        }
+    }
+
+    .content {
+        left: 10%;
+        top: 48%;
+    }
+
+    .main-header {
+        font-size: 2.8rem;
+    }
+
+    .parent-contact {
+        left: 32%;
+    }
+
+    .content1 h2 {
+        left: 32%;
+        top: 56%;
+        font-size: 2.2rem;
+    }
+
+}
+
+// small screen
+
+@media (min-width: 425px) and (max-width: 767px) {
+    @keyframes fly-right-one {
+
+        0% {
+            transform: scale(0.3) translateX(-10vw);
+            rotate: 10deg;
+        }
+
+        100% {
+            transform: translateY(0vh) translateX(110vw) scale(1.6);
+            rotate: -62deg;
+        }
+    }
+
+    .bird {
+        width: 200px;
+    }
+
+    .profile {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-parent {
+        top: 26%;
+        left: 37%;
+    }
+
+    .content {
+        left: 6%;
+        top: 48%;
+    }
+
+    .main-header {
+        font-size: 1.8rem;
+    }
+
+    .parent-contact {
+        left: 19%;
+        bottom: 23%;
+    }
+
+    .content1 h2 {
+        left: 16%;
+        top: 54%;
+        font-size: 2rem;
+    }
+
+    .code {
+        font-size: 1rem;
+    }
+
+    .contact-btn {
+        font-size: 1rem;
+    }
+
+    .download-btn {
+        font-size: 1rem;
+    }
+
+}
