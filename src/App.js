@@ -11,7 +11,6 @@ function App() {
         <Suspense fallback={<> This is Lodding... </>}>
           <Routes>
             <Route exact path="/" element={<HomePage />} />
-            <Route exact path="/new" element={<New />} />
           </Routes>
         </Suspense>
       </Router>
