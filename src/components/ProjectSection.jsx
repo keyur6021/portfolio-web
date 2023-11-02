@@ -8,7 +8,7 @@ const ProjectSection = () => {
     return (
         <div className="main-parent">
             <Box className='header-project'>
-                Projects
+                ! Projects
             </Box>
             <Grid container spacing={2}>
                 {[1, 2, 3, 4, 5, 6, 7, 8]?.map((data) => {
@@ -19,6 +19,14 @@ const ProjectSection = () => {
                     );
                 })}
             </Grid>
+            <div class="morphing">
+                <div class="word"> Hey !</div>
+                <div class="word"> Thanks </div>
+                <div class="word"> For </div>
+                <div class="word"> Connecting...</div>
+                <div class="word"> Us ! </div>
+                <div class="word"> 🔥 </div>
+            </div>
         </div>
     );
 };

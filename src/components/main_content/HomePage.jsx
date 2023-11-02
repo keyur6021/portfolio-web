@@ -9,6 +9,7 @@ const HomePage = () => {
       <div>
         <Header />
         <ProjectSection />
+
       </div>
 
     </React.Fragment>

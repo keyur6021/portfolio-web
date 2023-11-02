@@ -1,8 +1,5 @@
-/* 
-.navbar{
-    font-size: 2rem;
-    color:#fff;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Luckiest+Guy&family=Pacifico&display=swap');
+
 
 .main-parent {
     overflow: hidden;
@@ -17,16 +14,17 @@
 }
 
 .header-project {
-    color: white;
-    font-size: 3rem;
+    font-size: 3.5rem;
     padding-bottom: 2rem;
     font-weight: bold;
     opacity: 0.8;
     display: block;
-    border-radius: 20px;
-    width: 182px;
-    padding: 0.4rem 1.5rem 0.7rem 1.5rem;
+    width: 280px;
+    border-bottom: 2px solid #D90A2C;
+    padding: 0.4rem 1.5rem 0.6rem 1.5rem;
     margin: 2rem auto;
-    background-color: white;
-    color: #100E15;
+    font-family: 'Luckiest Guy', cursive;
+    color: #ffffff;
 }
+
+/* // css for animation  */
