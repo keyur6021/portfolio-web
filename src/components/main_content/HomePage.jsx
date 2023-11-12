@@ -3,7 +3,9 @@ import Header from "../headerSection/Header";
 import './../../../src/App.scss';
 import ProjectSection from "../ProjectSection";
 
+
 const HomePage = () => {
+
   return (
     <React.Fragment>
       <div>
@@ -11,7 +13,6 @@ const HomePage = () => {
         <ProjectSection />
 
       </div>
-
     </React.Fragment>
   );
 };

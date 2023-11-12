@@ -28,3 +28,45 @@
 }
 
 /* // css for animation  */
+.slash {
+    font-weight: 800;
+    font-size: 1.8rem !important;
+    padding-right: 6px;
+}
+
+.parent-social-icons {
+    width: 17%;
+    display: flex;
+    justify-content: space-between
+}
+
+.parent-social {
+    border: 1px dotted white;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.parent-social:hover {
+    color: #D90A2C;
+    transform: translateY(-5px);
+    transition: all ease-in-out 0.3s;
+}
+
+.parent-one-social {
+    display: block;
+    width: 250px;
+    margin: 0px auto;
+}
+
+.parent-social-icons-mobile {
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between
+}
