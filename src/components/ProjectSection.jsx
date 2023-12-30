@@ -7,6 +7,7 @@ import { LuInstagram } from "react-icons/lu";
 import { BsGithub } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { isMobile } from 'react-device-detect';
+import MotionCard from "./MotionDemo";
 
 const ProjectSection = () => {
 
@@ -19,7 +20,8 @@ const ProjectSection = () => {
                 {[1, 2, 3, 4, 5, 6, 7, 8]?.map((data) => {
                     return (
                         <Grid item xl={3} lg={4} md={6} sm={6} xs={12}>
-                            <PortfolioCard />
+                            {/* <PortfolioCard /> */}
+                            <MotionCard />
                         </Grid>
                     );
                 })}

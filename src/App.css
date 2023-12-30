@@ -70,3 +70,42 @@
     display: flex;
     justify-content: space-between
 }
+
+
+/* //!motion csss here */
+
+.parent-card-motion {
+    /* height: 100vh; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* background-image: linear-gradient(120deg, #3e3e3e, rgb(10, 15, 55), rgb(85, 85, 85)); */
+}
+
+.motion-card {
+    padding: 1.5rem 1.5rem;
+    max-width: 300px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+
+.motion-header {
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.motion-description {
+    font-size: 14px;
+    padding-top: 12px;
+    letter-spacing: 1.5px;
+}
+
+.motion-image {
+    height: 180px;
+    width: 100%;
+    border-radius: 20px;
+    padding-bottom: 12px;
+}
