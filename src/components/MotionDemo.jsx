@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FcReadingEbook } from "react-icons/fc";
 import project from "./../assets/images/new.jpg";
 
-const MotionCard = () => {
+const MotionCard = ({ data }) => {
     const [open, setOpen] = useState(false);
     return (
         <div className="parent-card-motion" onMouseOver={() => setOpen(true)}
@@ -20,8 +20,8 @@ const MotionCard = () => {
                     <AnimatePresence>
                         <motion.img
                             className="motion-image"
-                            key={project}
-                            src={project}
+                            key={data?.image}
+                            src={data?.image}
                             // transition={{ delay: 1 }}
                             initial={{ x: 300, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
@@ -30,7 +30,7 @@ const MotionCard = () => {
                 }
 
                 <motion.div layout='position' className="motion-header">
-                    Project Name <FcReadingEbook />
+                    {data?.name} <FcReadingEbook />
                 </motion.div>
                 {open && (
                     <motion.div
@@ -38,9 +38,7 @@ const MotionCard = () => {
                         animate={{ opacity: 1, color: "gray" }}
                         className="motion-description"
                     >
-                        Project description MotionCard card here Lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Nemo ratione repellendus repudiandae
-                        veniam impedit.
+                        {data?.description}
                     </motion.div>
                 )}
             </motion.div>

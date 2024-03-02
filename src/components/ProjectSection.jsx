@@ -8,8 +8,33 @@ import { BsGithub } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { isMobile } from 'react-device-detect';
 import MotionCard from "./MotionDemo";
+import Cloud from './../assets/images/cloud.png';
+import trend from './../assets/images/trend.png';
+import tesoract from './../assets/images/tesoract.png';
+import inovac from './../assets/images/inovac.png';
 
 const ProjectSection = () => {
+
+    const projectData = [
+        {
+            name: 'Cloudairy',
+            image: Cloud,
+            description: "Project helps on Cloud cost optimization with a strategic approach to controlling and minimizing the expenses associated with our business. My role was implementing complex design structure and integrat the charts like (pie chart, donute chart) using Redux"
+        },
+        {
+            name: 'Tesoract-App',
+            image: tesoract,
+            description: "A project aim to create a single platform which can be linked or access multiple apps to create user- friendly interface. My role was frontend developer"
+        }, {
+            name: 'Trendappend',
+            image: trend,
+            description: "- Project is similar to Social media app tiktok, but here user can buy/ sell any products in any currency"
+        }, {
+            name: 'Innovec Project',
+            image: inovac,
+            description: "- A project for mechanical industry where user can easily track all the informations productivity, Quality, Time management and many more"
+        },
+    ]
 
     return (
         <div className="main-parent">
@@ -17,11 +42,11 @@ const ProjectSection = () => {
                 ! Projects
             </Box>
             <Grid container spacing={2}>
-                {[1, 2, 3, 4, 5, 6, 7, 8]?.map((data) => {
+                {projectData?.map((data, index) => {
                     return (
-                        <Grid item xl={3} lg={4} md={6} sm={6} xs={12}>
+                        <Grid item xl={3} lg={4} md={6} sm={6} xs={12} key={index}>
                             {/* <PortfolioCard /> */}
-                            <MotionCard />
+                            <MotionCard data={data} />
                         </Grid>
                     );
                 })}
