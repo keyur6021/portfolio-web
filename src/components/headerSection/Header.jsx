@@ -10,7 +10,12 @@ import { LuInstagram } from "react-icons/lu";
 import { BsGithub } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ projectRef }) => {
+  const projectExecuteScroll = () =>
+    projectRef?.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   return (
     <React.Fragment>
       <div className="parent-container">
@@ -95,7 +100,7 @@ const Header = () => {
         </div>
         <div className="parent-contact">
           <button className="contact-btn"> Contact Us </button>
-          <button className="download-btn">
+          <button className="download-btn" onClick={projectExecuteScroll}>
             <span className="parent-code">
               <span> Projects </span> <BsCodeSlash className="code" />
             </span>

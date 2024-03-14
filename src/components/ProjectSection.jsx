@@ -13,7 +13,7 @@ import trend from './../assets/images/trend.png';
 import tesoract from './../assets/images/tesoract.png';
 import inovac from './../assets/images/inovac.png';
 
-const ProjectSection = () => {
+const ProjectSection = ({ projectRef }) => {
 
     const projectData = [
         {
@@ -33,12 +33,12 @@ const ProjectSection = () => {
             name: 'Innovec Project',
             image: inovac,
             description: "- A project for mechanical industry where user can easily track all the informations productivity, Quality, Time management and many more"
-        },
+        }
     ]
 
     return (
         <div className="main-parent">
-            <Box className='header-project'>
+            <Box className='header-project' ref={projectRef}>
                 ! Projects
             </Box>
             <Grid container spacing={2}>
