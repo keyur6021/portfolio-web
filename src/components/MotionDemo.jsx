@@ -22,6 +22,7 @@ const MotionCard = ({ data }) => {
                             className="motion-image"
                             key={data?.image}
                             src={data?.image}
+                            loading="lazy"
                             // transition={{ delay: 1 }}
                             initial={{ x: 300, opacity: 0 }}
                             animate={{ x: 0, opacity: 1 }}
