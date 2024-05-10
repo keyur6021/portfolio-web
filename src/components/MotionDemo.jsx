@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, LazyMotion, domAnimation } from "framer-motion";
 import { FcReadingEbook } from "react-icons/fc";
 import project from "./../assets/images/new.jpg";
 
@@ -17,17 +17,19 @@ const MotionCard = ({ data }) => {
                 className="motion-card"
             >
                 {open &&
-                    <AnimatePresence>
-                        <motion.img
-                            className="motion-image"
-                            key={data?.image}
-                            src={data?.image}
-                            loading="lazy"
-                            // transition={{ delay: 1 }}
-                            initial={{ x: 300, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                        />
-                    </AnimatePresence>
+                    <LazyMotion features={domAnimation}>
+                        <AnimatePresence>
+                            <motion.img
+                                className="motion-image"
+                                key={data?.image}
+                                src={data?.image}
+                                loading="lazy"
+                                // transition={{ delay: 1 }}
+                                initial={{ x: 300, opacity: 0 }}
+                                animate={{ x: 0, opacity: 1 }}
+                            />
+                        </AnimatePresence>
+                    </LazyMotion>
                 }
 
                 <motion.div layout='position' className="motion-header">
