@@ -30,10 +30,10 @@ const ProjectSection = ({ projectRef }) => {
             image: trend,
             description: "- Project is similar to Social media app tiktok, but here user can buy/ sell any products in any currency"
         }, {
-            name: 'Innovec Project',
+            name: 'Neo Management(UAE)',
             image: inovac,
-            description: "- A project for mechanical industry where user can easily track all the informations productivity, Quality, Time management and many more"
-        }
+            description: " It's a next js project, which focuses on driver supply Over the world, in this project I've created diffrent modules like driver management, project management, etc..."
+        },
     ]
 
     return (
