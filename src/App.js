@@ -7,6 +7,7 @@ import MotionCard from "./components/MotionDemo.jsx";
 function App() {
   return (
     <div className="App">
+
       <Router>
         <Suspense fallback={<> This is Lodding... </>}>
           <Routes>
