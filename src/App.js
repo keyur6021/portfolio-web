@@ -1,22 +1,21 @@
 import { Suspense } from "react";
-import "./App.css";
-import HomePage from "./components/main_content/HomePage";
+import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MotionCard from "./components/MotionDemo.jsx";
+import PortfolioPage from "./components/main_content/PortfolioPage";
 
 function App() {
   return (
-    <div className="App">
-
-      <Router>
-        <Suspense fallback={<> This is Lodding... </>}>
-          <Routes>
-            <Route exact path="/" element={<HomePage />} />
-            <Route exact path="/motion" element={<MotionCard />} />
-          </Routes>
-        </Suspense>
-      </Router>
-    </div>
+    <Router>
+      <Suspense fallback={
+        <div className="min-h-screen bg-bg flex items-center justify-center">
+          <div className="w-8 h-8 border-2 border-accent border-t-transparent rounded-full animate-spin" />
+        </div>
+      }>
+        <Routes>
+          <Route path="/" element={<PortfolioPage />} />
+        </Routes>
+      </Suspense>
+    </Router>
   );
 }
 
