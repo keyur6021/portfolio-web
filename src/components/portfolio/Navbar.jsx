@@ -49,11 +49,10 @@ const Navbar = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? "bg-bg/90 backdrop-blur-xl border-b border-border shadow-card"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <div className="section-container">
         <nav className="flex items-center justify-between h-16">
@@ -120,10 +119,10 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
+            initial={{ maxHeight: 0, opacity: 0 }}
+            animate={{ maxHeight: 500, opacity: 1 }}
+            exit={{ maxHeight: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             className="md:hidden bg-surface border-b border-border overflow-hidden"
           >
             <ul className="section-container py-4 flex flex-col gap-4">

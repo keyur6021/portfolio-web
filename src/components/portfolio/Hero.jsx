@@ -10,13 +10,13 @@ const TECH_STACK = [
 
 // Badges that float around the photo
 const FLOAT_BADGES = [
-  { label: "React.js",    top: "4%",   left: "50%",  delay: 0 },
-  { label: "Next.js",     top: "20%",  left: "92%",  delay: 0.4 },
-  { label: "TypeScript",  top: "55%",  left: "96%",  delay: 0.8 },
-  { label: "AWS",         top: "82%",  left: "68%",  delay: 1.2 },
-  { label: "Redux",       top: "82%",  left: "22%",  delay: 1.6 },
-  { label: "Node.js",     top: "55%",  left: "-4%",  delay: 2.0 },
-  { label: "Tailwind",    top: "20%",  left: "2%",   delay: 2.4 },
+  { label: "React.js", top: "4%", left: "50%", delay: 0 },
+  { label: "Next.js", top: "20%", left: "92%", delay: 0.4 },
+  { label: "TypeScript", top: "55%", left: "96%", delay: 0.8 },
+  { label: "AWS", top: "82%", left: "68%", delay: 1.2 },
+  { label: "Redux", top: "82%", left: "22%", delay: 1.6 },
+  { label: "Node.js", top: "55%", left: "-4%", delay: 2.0 },
+  { label: "Tailwind", top: "20%", left: "2%", delay: 2.4 },
 ];
 
 const SOCIAL_LINKS = [
@@ -48,7 +48,7 @@ const fadeUp = (delay = 0) => ({
 
 /* ─── Animated profile photo with rings + floating badges ─── */
 const ProfilePhoto = () => (
-  <div className="relative w-[280px] h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[420px] lg:h-[420px] mx-auto">
+  <div className="relative w-[220px] h-[220px] xs:w-[280px] xs:h-[280px] sm:w-[340px] sm:h-[340px] lg:w-[420px] lg:h-[420px] mx-auto">
 
     {/* Outer slow-spin dashed ring */}
     <motion.div
@@ -61,18 +61,18 @@ const ProfilePhoto = () => (
     <motion.div
       animate={{ scale: [1, 1.04, 1], opacity: [0.4, 0.8, 0.4] }}
       transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-      className="absolute inset-[14px] rounded-full border border-accent/40"
+      className="absolute inset-[10px] xs:inset-[14px] rounded-full border border-accent/40"
     />
 
     {/* Glow behind photo */}
-    <div className="absolute inset-[28px] rounded-full bg-accent/20 blur-2xl" />
+    <div className="absolute inset-[20px] xs:inset-[28px] rounded-full bg-accent/20 blur-2xl" />
 
     {/* Photo */}
     <motion.div
       initial={{ scale: 0.8, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="absolute inset-[28px] rounded-full overflow-hidden border-2 border-accent/60 shadow-[0_0_40px_rgba(99,102,241,0.35)]"
+      className="absolute inset-[20px] xs:inset-[28px] rounded-full overflow-hidden border-2 border-accent/60 shadow-[0_0_40px_rgba(99,102,241,0.35)]"
     >
       <img
         src={profileImg}
@@ -89,9 +89,9 @@ const ProfilePhoto = () => (
       <motion.span
         key={b.label}
         style={{ top: b.top, left: b.left, transform: "translate(-50%, -50%)" }}
-        className="absolute z-10 px-2.5 py-1 text-[10px] font-semibold font-mono rounded-full
+        className="absolute z-10 px-1.5 xs:px-2.5 py-0.5 xs:py-1 text-[8px] xs:text-[10px] font-semibold font-mono rounded-full
                    bg-bg/90 border border-accent/40 text-accent-light shadow-glow backdrop-blur-sm
-                   whitespace-nowrap"
+                   whitespace-nowrap hidden xs:inline-flex"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{
           opacity: 1,
@@ -100,7 +100,7 @@ const ProfilePhoto = () => (
         }}
         transition={{
           opacity: { duration: 0.4, delay: 0.6 + b.delay },
-          scale:   { duration: 0.4, delay: 0.6 + b.delay },
+          scale: { duration: 0.4, delay: 0.6 + b.delay },
           y: {
             duration: 3 + b.delay * 0.3,
             repeat: Infinity,
@@ -115,9 +115,9 @@ const ProfilePhoto = () => (
 
     {/* Online status dot */}
     <div className="absolute bottom-[14%] right-[10%] z-20">
-      <span className="flex items-center gap-1.5 bg-bg/90 border border-emerald-500/40 rounded-full px-2.5 py-1 text-[10px] font-medium text-emerald-400 backdrop-blur-sm shadow-md">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-        Open to Work
+      <span className="flex items-center gap-1 bg-bg/90 border border-emerald-500/40 rounded-full px-1.5 xs:px-2.5 py-0.5 xs:py-1 text-[8px] xs:text-[10px] font-medium text-emerald-400 backdrop-blur-sm shadow-md">
+        <span className="w-1 h-1 xs:w-1.5 xs:h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span className="hidden xs:inline">Open to Work</span>
       </span>
     </div>
   </div>
@@ -147,18 +147,18 @@ const Hero = () => {
         />
       </div>
 
-      <div className="section-container relative z-10 w-full pt-24 pb-16">
+      <div className="section-container relative z-10 w-full pt-20 pb-12">
         {/* ── Two-column grid ── */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-8 items-center">
 
           {/* ── LEFT: text content ── */}
           <div className="order-2 lg:order-1 text-center lg:text-left">
 
             {/* Badge */}
-            <motion.div {...fadeUp(0)} className="flex justify-center lg:justify-start mb-6">
-              <span className="inline-flex items-center gap-2 text-xs font-medium text-emerald-400
-                               bg-emerald-400/10 border border-emerald-400/20 rounded-full px-3 py-1.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+            <motion.div {...fadeUp(0)} className="flex justify-center lg:justify-start mb-4">
+              <span className="inline-flex items-center gap-1.5 xs:gap-2 text-[10px] xs:text-xs font-medium text-emerald-400
+                               bg-emerald-400/10 border border-emerald-400/20 rounded-full px-2 xs:px-3 py-1 xs:py-1.5">
+                <span className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
                 Available for Senior Frontend roles — Immediate joiner
               </span>
             </motion.div>
@@ -166,8 +166,8 @@ const Hero = () => {
             {/* Headline */}
             <motion.h1
               {...fadeUp(0.1)}
-              className="text-[2.2rem] xs:text-5xl sm:text-5xl md:text-6xl font-extrabold
-                         text-white leading-[1.12] tracking-tight mb-5"
+              className="text-[1.7rem] xs:text-[2.2rem] sm:text-5xl md:text-6xl font-extrabold
+                         text-white leading-[1.12] tracking-tight mb-4"
             >
               Hi, I'm{" "}
               <span className="gradient-text">Keyur</span>
@@ -180,7 +180,7 @@ const Hero = () => {
             {/* Sub */}
             <motion.p
               {...fadeUp(0.2)}
-              className="text-base sm:text-lg text-muted max-w-lg mx-auto lg:mx-0 mb-3 leading-relaxed"
+              className="text-sm xs:text-base sm:text-lg text-muted max-w-lg mx-auto lg:mx-0 mb-3 leading-relaxed"
             >
               Frontend architect with{" "}
               <span className="text-accent font-semibold">4+ years</span> building
@@ -189,43 +189,45 @@ const Hero = () => {
               I ship fast, scalable, accessible UIs that drive business impact.
             </motion.p>
 
-            <motion.p {...fadeUp(0.25)} className="text-xs sm:text-sm text-subtle mb-8 font-mono">
+            <motion.p {...fadeUp(0.25)} className="text-[10px] xs:text-xs sm:text-sm text-subtle mb-6 font-mono">
               📍 Vadodara, Gujarat, India · Remote &amp; On-site
             </motion.p>
 
             {/* CTAs */}
             <motion.div
               {...fadeUp(0.3)}
-              className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start gap-3 mb-8"
+              className="flex flex-col gap-2 mb-6"
             >
               <button
                 onClick={() => handleScroll("#projects")}
-                className="btn-primary w-full xs:w-auto justify-center"
+                className="btn-primary w-full justify-center"
               >
                 View Projects
               </button>
-              <a
-                href="https://drive.google.com/uc?export=download&id=1AlQoLiCVosLlMANNlmVshbTv9kluzq1J"
-                target="_blank"
-                rel="noreferrer"
-                className="btn-outline w-full xs:w-auto justify-center"
-              >
-                <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download Resume
-              </a>
-              <button
-                onClick={() => handleScroll("#contact")}
-                className="btn-outline w-full xs:w-auto justify-center"
-              >
-                Contact Me
-              </button>
+              <div className="flex gap-2">
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1AlQoLiCVosLlMANNlmVshbTv9kluzq1J"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-outline flex-1 justify-center"
+                >
+                  <svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Download Resume
+                </a>
+                <button
+                  onClick={() => handleScroll("#contact")}
+                  className="btn-outline flex-1 justify-center"
+                >
+                  Contact Me
+                </button>
+              </div>
             </motion.div>
 
             {/* Socials */}
-            <motion.div {...fadeUp(0.35)} className="flex justify-center lg:justify-start gap-3 mb-10">
+            <motion.div {...fadeUp(0.35)} className="flex justify-center lg:justify-start gap-2 xs:gap-3 mb-8">
               {SOCIAL_LINKS.map((s) => (
                 <a
                   key={s.label}
@@ -233,7 +235,7 @@ const Hero = () => {
                   target="_blank"
                   rel="noreferrer"
                   aria-label={s.label}
-                  className="p-2.5 rounded-lg border border-border hover:border-accent
+                  className="p-2 xs:p-2.5 rounded-lg border border-border hover:border-accent
                              text-muted hover:text-accent transition-all duration-200 hover:scale-110"
                 >
                   {s.icon}
@@ -244,17 +246,17 @@ const Hero = () => {
             {/* Stats */}
             <motion.div
               {...fadeUp(0.4)}
-              className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-3"
+              className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4 gap-2 xs:gap-3"
             >
               {[
-                { value: "4+",  label: "Years Exp." },
-                { value: "7+",  label: "Apps Shipped" },
+                { value: "4+", label: "Years Exp." },
+                { value: "7+", label: "Apps Shipped" },
                 { value: "40%", label: "Perf. Gains" },
                 { value: "30%", label: "Faster Cycles" },
               ].map((stat) => (
-                <div key={stat.label} className="glass-card p-3 text-center">
-                  <div className="text-xl font-extrabold gradient-text">{stat.value}</div>
-                  <div className="text-[10px] text-muted mt-0.5">{stat.label}</div>
+                <div key={stat.label} className="glass-card p-2.5 xs:p-3 text-center">
+                  <div className="text-lg xs:text-xl font-extrabold gradient-text">{stat.value}</div>
+                  <div className="text-[9px] xs:text-[10px] text-muted mt-0.5">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -274,15 +276,15 @@ const Hero = () => {
         {/* ── Tech stack ticker ── */}
         <motion.div
           {...fadeUp(0.5)}
-          className="mt-16 w-full overflow-hidden"
+          className="mt-12 w-full overflow-hidden"
         >
-          <p className="text-xs text-subtle uppercase tracking-widest font-mono mb-3 text-center lg:text-left">
+          <p className="text-[10px] xs:text-xs text-subtle uppercase tracking-widest font-mono mb-2 text-center lg:text-left">
             Technologies I work with
           </p>
           <div className="overflow-hidden w-full">
-            <div className="flex gap-3 animate-[ticker_30s_linear_infinite] whitespace-nowrap w-max">
+            <div className="flex gap-2 xs:gap-3 animate-[ticker_30s_linear_infinite] whitespace-nowrap w-max">
               {[...TECH_STACK, ...TECH_STACK, ...TECH_STACK].map((tech, i) => (
-                <span key={i} className="tag shrink-0">{tech}</span>
+                <span key={i} className="tag shrink-0 text-[10px] xs:text-xs">{tech}</span>
               ))}
             </div>
           </div>
